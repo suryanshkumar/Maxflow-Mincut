@@ -150,12 +150,12 @@ int main(int argc, char *argv[])
     
     
     std::vector<unary>:: iterator ssnode_weight     = nE.nodeW.begin();
-	std::vector<smoothness>:: iterator bnode_weight = nE.neigW.begin();
+    std::vector<smoothness>:: iterator bnode_weight = nE.neigW.begin();
     
-	typedef Graph<int,int,int> GraphType;
+    typedef Graph<int,int,int> GraphType;
     
     /**Second term is substracting node size because, the node itself is also considered while calculating smoothness term**/ 
-	GraphType *g = new GraphType(nE.nodeW.size(), nE.neigW.size() - nE.nodeW.size()); 
+    GraphType *g = new GraphType(nE.nodeW.size(), nE.neigW.size() - nE.nodeW.size()); 
     
    
     int node=0;  
@@ -167,7 +167,7 @@ int main(int argc, char *argv[])
 		//cout<<"Source Weight"<<" "<<"Sink Weight "<<temp.sourceVal<<" "<<temp.sinkVal<<endl;
 		*ssnode_weight++;
 		node++;
-	}
+    }
     
     while(bnode_weight!=nE.neigW.end())
     {
@@ -178,7 +178,7 @@ int main(int argc, char *argv[])
             //cout<<"Node_id1"<<" "<<"Node_id2 "<<" Distance "<< linkw.current_node_id <<" "<<linkw.neighbour_node_id<<" "<<linkw.edge_potential<<endl;
         }
 		*bnode_weight++;
-	}
+    }
     
     //Max-flow algorithm
     int flow = g -> maxflow();
@@ -189,12 +189,12 @@ int main(int argc, char *argv[])
         {
             cout<<"Node "<< i << " is in the source "<<endl;
         }
-		else
+	else
         {
             cout<<"Node "<< i << " is in the sink "<<endl;
-		}
-
 	}
+
+    }
 
     return 0;
 }
