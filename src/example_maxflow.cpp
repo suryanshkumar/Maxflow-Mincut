@@ -161,17 +161,17 @@ int main(int argc, char *argv[])
     int node=0;  
     while(ssnode_weight != nE.nodeW.end())
     {
-		unary temp =  *ssnode_weight;
-		g -> add_node(); 
-		g -> add_tweights( node, temp.sourceVal, temp.sinkVal );
-		//cout<<"Source Weight"<<" "<<"Sink Weight "<<temp.sourceVal<<" "<<temp.sinkVal<<endl;
-		*ssnode_weight++;
-		node++;
+	unary temp =  *ssnode_weight;
+	g -> add_node(); 
+	g -> add_tweights( node, temp.sourceVal, temp.sinkVal );
+	//cout<<"Source Weight"<<" "<<"Sink Weight "<<temp.sourceVal<<" "<<temp.sinkVal<<endl;
+	*ssnode_weight++;
+	node++;
     }
     
     while(bnode_weight!=nE.neigW.end())
     {
-		smoothness linkw =  *bnode_weight;
+	smoothness linkw =  *bnode_weight;
         if(linkw.current_node_id != linkw.neighbour_node_id)
         {
             g -> add_edge( linkw.current_node_id, linkw.neighbour_node_id, linkw.edge_potential, linkw.edge_potential );
